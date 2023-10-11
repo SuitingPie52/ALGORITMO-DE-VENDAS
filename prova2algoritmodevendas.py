@@ -115,7 +115,7 @@ def mercadoriaPorTotal(produtos):  # e)
     for chave, valor in produtos.items():
         x, y = valor
 
-        print("A chave", chave, "representa", (x * y) / total, " por cento do total do faturamento")
+        print("A chave", chave, "representa", ((x * y) / total)*100, " por cento do total do faturamento")
 
 
 def passarParaTexto(produtos):  # f)
@@ -127,7 +127,7 @@ def passarParaTexto(produtos):  # f)
         for chave, valor in produtos.items():
             x, y = valor
             arquivo.write("\nProduto: " + str(chave) + "/ Preco: " + str(x) + "/ Qtd vendida: " + str(y) +
-                          "/ Faturamento: " + str(x * y) + "/ Percentual do total: " + str((x * y / total)))
+                          "/ Faturamento: " + str(x * y) + "/ Percentual do total: " + str((x * y / total)*100))
             vendidos += y
 
         arquivo.write("\nTOTAL DE PRODUTOS VENDIDOS: " + str(vendidos) + "\nTOTAL FATURADO: " + str(total))
